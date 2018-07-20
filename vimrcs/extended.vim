@@ -170,3 +170,6 @@ endfunc
 func! CurrentFileDir(cmd)
     return a:cmd . " " . expand("%:p:h") . "/"
 endfunc
+
+" When you press ts you ts after the selected text
+vnoremap <silent> ts :call VisualSelection('ts', '')<CR>

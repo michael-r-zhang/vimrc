@@ -374,9 +374,10 @@ function! <SID>BufcloseCloseIt()
 endfunction
 
 function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
+    execute(a:str)
+    "exe "menu Foo.Bar :" . a:str
+    "emenu Foo.Bar
+    "unmenu Foo
 endfunction 
 
 function! VisualSelection(direction, extra_filter) range
@@ -388,6 +389,8 @@ function! VisualSelection(direction, extra_filter) range
 
     if a:direction == 'gv'
         call CmdLine("Ack '" . l:pattern . "' " )
+    elseif a:direction == 'ts'
+        call CmdLine("ts " . l:pattern)
     elseif a:direction == 'replace'
         call CmdLine("%s" . '/'. l:pattern . '/')
     endif
