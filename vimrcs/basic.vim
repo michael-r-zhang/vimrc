@@ -398,3 +398,9 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vi mode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set -o vi
+bind '"\e."':yank-last-arg
