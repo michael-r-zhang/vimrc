@@ -141,6 +141,7 @@ nnoremap <silent> <leader>z :Goyo<cr>
 " => Vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports"
+let g:go_version_warning = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -155,6 +156,10 @@ let g:syntastic_javascript_checkers = ['jshint']
 " Go
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+
+" C/C++
+let g:syntastic_c_checkers = []
+let g:syntastic_cpp_checkers = []
 
 " Custom CoffeeScript SyntasticCheck
 func! SyntasticCheckCoffeescript()
@@ -171,3 +176,24 @@ nnoremap <silent> <leader>c :call SyntasticCheckCoffeescript()<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Tagbar
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd VimEnter * nested :TagbarOpen
+let g:tagbar_left = 1
+" 启动时自动focus
+let g:tagbar_autofocus = 1
+
+" for ruby, delete if you do not need
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
