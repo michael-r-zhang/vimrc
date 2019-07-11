@@ -184,7 +184,7 @@ nnoremap <silent> <leader>d :GitGutterToggle<cr>
 autocmd VimEnter * nested :TagbarOpen
 let g:tagbar_left = 1
 " 启动时自动focus
-let g:tagbar_autofocus = 1
+let g:tagbar_autofocus = 0
 
 " for ruby, delete if you do not need
 let g:tagbar_type_ruby = {
