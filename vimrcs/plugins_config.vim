@@ -186,6 +186,8 @@ let g:tagbar_left = 1
 " 启动时自动focus
 let g:tagbar_autofocus = 0
 
+let g:tagbar_width = 25
+
 " for ruby, delete if you do not need
 let g:tagbar_type_ruby = {
     \ 'kinds' : [
